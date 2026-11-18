@@ -1,0 +1,33 @@
+<header class="pt-12 pb-9 md:pt-17 md:pb-11 lg:pt-20 lg:pb-14">
+  <h1 class="text-[2.7rem] leading-[1.12] font-semibold tracking-[-0.035em] text-base-content sm:text-6xl lg:text-[5.5rem]">
+    <span class="font-brand">{{ home.titleLead }}</span>
+    <em lang="en" class="ms-[0.1em] inline-block font-display font-normal tracking-tight text-primary">{{ home.titleEmphasis }}</em>
+  </h1>
+  <p class="mt-5 max-w-[42rem] text-[0.99rem] leading-[1.95] text-secondary sm:mt-6 sm:text-[1.06rem]">{{ home.intro }}</p>
+</header>
+
+<section id="works" aria-label="所有作品" class="grid scroll-mt-5 gap-0 border-t border-base-300 pb-12 sm:grid-cols-3 sm:gap-5 sm:pt-7 sm:pb-17 lg:gap-8">
+  @for (project of projects; track project.slug) {
+    <a class="group block min-w-0 rounded-sm border-b border-base-300 py-5 outline-offset-4 sm:border-0 sm:py-0"
+       [routerLink]="['/projects', project.slug]" [attr.aria-label]="'進入專案：' + project.name">
+      <article class="card grid h-full grid-cols-[minmax(4.75rem,31%)_minmax(0,1fr)] items-center gap-4 rounded-none sm:flex sm:items-stretch sm:gap-0">
+        <figure class="aspect-square w-full rounded-lg bg-base-200 sm:aspect-[1.52] sm:rounded-xl">
+          <img [src]="project.image" [alt]="project.imageAlt" width="1152" height="768"
+               class="block h-full w-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-[1.035]">
+        </figure>
+        <div class="card-body min-w-0 gap-0 p-0 sm:pt-5 lg:pt-6">
+          <p class="flex-none text-xs font-semibold tracking-wide text-secondary">{{ project.category }}</p>
+          <h2 class="card-title mt-1.5 text-xl leading-snug font-bold tracking-tight sm:mt-2 sm:text-2xl lg:text-[1.9rem]">{{ project.name }}</h2>
+          <p class="mt-1.5 text-[0.87rem] leading-6 text-secondary sm:mt-3 sm:text-[0.98rem] sm:leading-7">{{ project.summary }}</p>
+          <span class="card-actions mt-2 items-center gap-2 text-[0.78rem] font-bold text-primary sm:mt-5 sm:text-sm">
+            進入專案
+            <svg aria-hidden="true" width="19" height="16" viewBox="0 0 24 16" fill="none" stroke="currentColor" stroke-width="1.6"
+                 class="motion-safe:transition-transform motion-safe:group-hover:translate-x-1">
+              <path d="M2 8h18m-6-6 6 6-6 6"/>
+            </svg>
+          </span>
+        </div>
+      </article>
+    </a>
+  }
+</section>

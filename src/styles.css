@@ -1,0 +1,49 @@
+@import "@fontsource/dm-serif-text/latin-400-italic.css";
+@import "@fontsource-variable/bricolage-grotesque/wght.css";
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: false;
+}
+
+/* 修改這組 daisyUI 語意色即可套用到首頁、專案頁和導覽列。 */
+@plugin "daisyui/theme" {
+  name: "studio";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+  --color-base-100: #fcfaf4;
+  --color-base-200: #f1f0e6;
+  --color-base-300: #d9dace;
+  --color-base-content: #242923;
+  --color-primary: #284b3e;
+  --color-primary-content: #fffaf0;
+  --color-secondary: #596056;
+  --color-secondary-content: #ffffff;
+  --color-accent: #a3462a;
+  --color-accent-content: #ffffff;
+  --color-neutral: #313a31;
+  --color-neutral-content: #ffffff;
+  --color-info: #d8e5ec;
+  --color-info-content: #274553;
+  --color-success: #dce5d6;
+  --color-success-content: #233f31;
+  --color-warning: #f1dbac;
+  --color-warning-content: #4d3711;
+  --color-error: #f2d7ce;
+  --color-error-content: #682414;
+  --radius-box: 0.75rem;
+  --radius-field: 0.375rem;
+  --radius-selector: 0.375rem;
+  --size-field: 0.25rem;
+  --size-selector: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@theme {
+  --font-sans: "Bricolage Grotesque Variable", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --font-brand: var(--font-sans);
+  --font-display: "DM Serif Text", Georgia, serif;
+}
